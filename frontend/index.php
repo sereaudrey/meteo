@@ -11,10 +11,10 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
         <script src="js/index.js"></script>
         <!-- Js pour la map -->
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-        <script src="js/map.js"></script>
+        <!-- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script> -->
+        <!-- <script src="js/map.js"></script> -->
 
-        <title>Météo</title>
+    <title>Météo</title>
     </head>
     <body onload="init()">
    
@@ -43,6 +43,30 @@
                     </div>
                 </div>
             </form>
+        <h1> Mon application météo </h1>
+        <div class="weather box">
+            <div class="weather-left">
+                <h3 class="actual_weather"></h3>
+                <img src="./styles/assets/jour/04d.svg" alt="logo du temps qu'il fait" class='logo-meteo'>
+            </div>
+            <div class="weather-right">
+                <p><img class="icone icone-temp" src="styles/assets/icones/temperature-low-solid.svg" alt="icone temperature">Température : <span class="temperatureLocal"></span></p>
+                <p><img class="icone icone-humidity" src="styles/assets/icones/droplet-solid.svg" alt="icone temperature"> Humidité : <span class="humidity"></span></p>
+            </div>
+        </div>
+
+        <div class="chart box">
+            <h3>Relevé température et humidité</h3>
+            <canvas id="myChart" class="chart-data"></canvas>
+        </div>
+
+        <!-- <form>
+            <input placeholder="Rechercher une ville">
+        </form>  -->
+        <div class="meteo_actuelle">
+            <span class="logo"></span>
+            <span class="ville"> Nom de la ville </span> </br>
+            <span class="temperature"> Température actuelle </span>
         </div>
         <div class="menu">
             <div class="item logo-app">
@@ -97,6 +121,9 @@
                 <div class="carte_sonde" id="map"></div>
             </div>
         </div>
-       
+        
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>
