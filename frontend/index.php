@@ -6,7 +6,6 @@
         <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="styles/popin.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-        <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"> -->
         <!--Lien css pour la map-->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
@@ -52,26 +51,25 @@
         </div>
         <div class="menu">
             <div class="item logo-app">
-                <i class="fas fa-star-half-alt"></i> ATMOS
+                <i class="fas fa-star-half-alt"></i> 
+                <span>ATMOS</span> 
             </div>
             <div class="item connexion-item">
                 <a onclick="connexion()">
                     <button id="buttonLogin">
-                        <i class="fas fa-user-circle"></i> Connexion
+                        <i class="fas fa-user-circle"></i>
+                        <span>Connexion</span>
                     </button> 
                 </a>
             </div>
             <div class="item logout-item">
-                <i class="fas fa-sign-out-alt"></i> Déconnexion
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Déconnexion</span> 
             </div>
         </div>
         <div class="content">
             <h1> Bienvenue sur Atmos ! </h1>
             <i class="fa-solid fa-circle-user"></i>
-            <form class="search">
-                <input placeholder="Rechercher une ville">
-                <button class="btn-search"><i class="fas fa-search"></i></button>
-            </form>
             
             <div class="content-meteo-actuelle">
                 <div class="actuel position-actuelle">
@@ -94,18 +92,18 @@
                 </div>
             </div>
     
+            <div class="zone-releve">
+                <div class="title-releve">
+                    <h2>Historique de mes relevés</h2>
+                </div>
+                <div class="releve"></div>
+            </div>
             <div class="zone-map">
                 <div class="title-map">
                     <h2>Ma sonde</h2> <br> 
                     <p>Villeurbanne</p>
                 </div>
                 <div class="carte_sonde" id="map"></div>
-            </div>
-            <div class="zone-releve">
-                <div class="title-releve">
-                    <h2>Historique de mes relevés</h2>
-                </div>
-                <div class="releve"></div>
             </div>
         </div>
         <?php

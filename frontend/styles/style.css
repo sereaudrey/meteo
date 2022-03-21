@@ -18,8 +18,8 @@ h2 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 15%;
-  height: 950px;
+  width: 10%;
+  height: 1000px;
   background: #071a51;
   border: 1px solid #071a51;
   border-radius: 10px;
@@ -36,6 +36,7 @@ h2 {
 .logo-app {
   color: #d6a8df;
   font-weight: bold;
+  font-size: 1.8em;
 }
 
 #buttonLogin {
@@ -54,38 +55,12 @@ h2 {
 
 /* Page principale */
 .content {
-  width: 80%;
+  width: 85%;
   display: flex;
   flex-direction: column;
   float: right;
 }
 
-.search {
-  position: relative;
-  width: 60%;
-  height: 30px;
-}
-
-.btn-search {
-  position: absolute;
-  width: 50px;
-  height: 100%;
-  top: 0;
-  right: 0;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  background: #39519c;
-  border: none;
-  color: #fafafa;
-}
-
-input {
-  width: 100%;
-  height: 100%;
-  background : #39519c;
-  border: 1px solid #39519c;
-  border-radius: 20px;
-}
 .meteo_actuelle {
   background: #F5F6FF;
   width: 20%;
@@ -116,13 +91,13 @@ input {
   border-radius: 20px;
   width: 90%;
   height: 400px;
+  margin-top: 5%;
 }
 
 .zone-releve {
   background: #39519c;
   border: 1px solid #39519c;
   border-radius: 20px;
-  margin-top: 5%;
   width: 90%;
   height: 300px;
 }
@@ -146,3 +121,87 @@ input {
   justify-content: space-around;
 }
 
+@media screen and (max-width : 1050px) {
+  .item {
+    font-size: 1.2em;
+    padding: 5px;
+  }
+
+  .logout-item {
+    font-size: 0.7em;
+  }
+  
+  #map {
+    height: 200px;
+    width: 70%;
+  }
+
+  .title-map {
+    margin: 5% 20px;
+  }
+
+  .zone-map {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width : 800px) {
+  .item {
+    font-size: 1.2em;
+    padding: 5px;
+  }
+
+  .logout-item {
+    font-size: 0.8em;
+  }
+
+  #map {
+    height: 200px;
+    width: 70%;
+  }
+
+  .title-map {
+    margin: 5% 20px;
+  }
+
+  .zone-map {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width : 400px) {
+  .item {
+    font-size: 2em;
+    padding: 5px;
+  }
+  
+  .menu span {
+    display: none;
+  }
+
+  .logout-item {
+    font-size: 1.6em;
+  }
+
+  .menu {
+    width: 10%;
+  }
+  
+  #map {
+    height: 200px;
+    width: 90%;
+    margin-left: 5px;
+  }
+
+  .title-map {
+    font-size: 1em;
+  }
+
+  .title-map {
+    margin: 1% 5px;
+  }
+
+  .zone-map {
+    height: 600px;
+  }
+}
