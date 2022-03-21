@@ -1,0 +1,71 @@
+/* Popin connexion */
+  .popin-connexion {
+    z-index: 3;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #d0dafa;
+    position: absolute;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 10px;
+    width: 30%;
+    height: 300px;
+    background: #071a51;
+    top: 300px;
+    margin-left: 38%;
+    display: none;
+  }
+  
+  .popin-connexion input{
+    float: right;
+    border-radius: 10px;
+    width: 70%;
+    padding: 10px;
+    padding-left: 5px;
+    background: #fafafa;
+  }
+  
+  .popin-connexion span{
+    float: left;
+    padding-top: 15px;
+    padding-left: 10px;
+    display: block;
+  }
+  
+  .login-button button {
+    padding: 10px;
+    width: 40%;
+    text-align: center;
+    background: #d0dafa;
+    color: #071a51;
+    height: 50px; 
+    border: 1px solid;
+    border-radius: 10px;
+    margin-left: 20px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.1em;
+  }
+  .login-button {
+    padding-top: 50px;
+    padding-right: 10px;
+    
+  }
+  
+  .login-mail, .login-mdp {
+    padding: 30px 5px;
+  }
+
+  .logo-exit {
+      text-align: right;
+  }
+
+  #exitPopin {
+      background: #071a51;
+      border: none;
+      color: #d0dafa;
+      font-size: 20px;
+  }
+  
+  .content-login {
+    padding: 5px;
+  }

@@ -1,10 +1,64 @@
 body {
-  background-color: #ffff;
+  background: #d0dafa;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
 }
 
 h1 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #9BA8D7;
+}
+
+h2 {
+  color: #b7b7bc;
+  font-size: 0.8em;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 10%;
+  height: 1000px;
+  background: #071a51;
+  border: 1px solid #071a51;
+  border-radius: 10px;
+  position: relative;
+  float: left;
+}
+
+.item {
+  font-size: 2em;
+  padding: 10px;
+  color: #fafafa;
+}
+
+.logo-app {
+  color: #d6a8df;
+  font-weight: bold;
+  font-size: 1.8em;
+}
+
+#buttonLogin {
+  color: #fafafa;
+  border:none;
+  background: #071a51;
+  padding: 0;
+  font-size: 0.6em;
+}
+
+.logout-item {
+  position: fixed;
+  bottom: 0;
+  font-size: 1.1em;
+}
+
+/* Page principale */
+.content {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  float: right;
 }
 
 .meteo_actuelle {
@@ -19,7 +73,135 @@ h1 {
 }
 
 #map {
-  height: 400px;
-  width: 50%;
+  height: 300px;
+  width: 80%;
+  padding: 5px;
+  margin-top: 40px;
+  z-index: 1;
 }
-/*# sourceMappingURL=style.css.map */
+
+.title-map {
+  float: left;
+  margin: 10% 20px;
+}
+
+.zone-map {
+  background: #39519c;
+  border: 1px solid #39519c;
+  border-radius: 20px;
+  width: 90%;
+  height: 400px;
+  margin-top: 5%;
+}
+
+.zone-releve {
+  background: #39519c;
+  border: 1px solid #39519c;
+  border-radius: 20px;
+  width: 90%;
+  height: 300px;
+}
+
+.title-releve {
+  float: right;
+  padding: 10px;
+}
+
+.actuel {
+  background: #39519c;
+  border: 1px solid #39519c;
+  border-radius: 20px;
+  width: 20%;
+  margin: 15px;
+}
+
+.content-meteo-actuelle {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+@media screen and (max-width : 1050px) {
+  .item {
+    font-size: 1.2em;
+    padding: 5px;
+  }
+
+  .logout-item {
+    font-size: 0.7em;
+  }
+  
+  #map {
+    height: 200px;
+    width: 70%;
+  }
+
+  .title-map {
+    margin: 5% 20px;
+  }
+
+  .zone-map {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width : 800px) {
+  .item {
+    font-size: 1.2em;
+    padding: 5px;
+  }
+
+  .logout-item {
+    font-size: 0.8em;
+  }
+
+  #map {
+    height: 200px;
+    width: 70%;
+  }
+
+  .title-map {
+    margin: 5% 20px;
+  }
+
+  .zone-map {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width : 400px) {
+  .item {
+    font-size: 2em;
+    padding: 5px;
+  }
+  
+  .menu span {
+    display: none;
+  }
+
+  .logout-item {
+    font-size: 1.6em;
+  }
+
+  .menu {
+    width: 10%;
+  }
+  
+  #map {
+    height: 200px;
+    width: 90%;
+    margin-left: 5px;
+  }
+
+  .title-map {
+    font-size: 1em;
+  }
+
+  .title-map {
+    margin: 1% 5px;
+  }
+
+  .zone-map {
+    height: 600px;
+  }
+}

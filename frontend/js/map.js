@@ -1,3 +1,4 @@
+// Fonction pour afficher la map interactive
 function init() {
 
     let map = L.map('map').setView([45.750, 4.85], 12);
@@ -10,5 +11,5 @@ function init() {
         accessToken: 'pk.eyJ1IjoiYXVkcmV5c2VyZSIsImEiOiJja3lvY25icDQzeWl4Mm9wYmVubDBoYnl0In0.Ya2eY72sF7OQEeAFKEkv-A'
     }).addTo(map);
     
-    var marker = L.marker([45.772, 4.89]).addTo(map);
+    var marker = L.marker([45.7834748242527, 4.882772847209447]).addTo(map);
 }
