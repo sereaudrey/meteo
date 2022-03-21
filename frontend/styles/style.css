@@ -276,6 +276,11 @@ h3::first-letter {
   text-align: center;
 }
 
+#myChart {
+  width: 90% !important;
+  margin: 1em auto;
+}
+
 .chart-data {
   background: white;
   margin: 1em;

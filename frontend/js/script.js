@@ -1,15 +1,14 @@
 // api meteo
-
 const CLEFAPI = "e7898f9bfac6cb1ae2b74dd328bbb92c";
 
 let resultatsAPI;
 
 const actualWeather = document.querySelector(".actual_weather");
 const temperatureLocal = document.querySelector(".temperatureLocal");
-const imgIcone = document.querySelector(".logo-meteo");
+// const imgIcone = document.querySelector(".logo-meteo");
 const humidity = document.querySelector(".humidity");
 
-//géolocalisation du navigateur pour avoir le temps
+//géolocalisation du navigateur pour avoir le temps et l'heure
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(
     (position) => {
@@ -42,47 +41,78 @@ function AppelAPI(long, lat) {
       humidity.innerText = `${resultatsAPI.current.humidity}%`;
       temperatureLocal.innerText = `${Math.trunc(resultatsAPI.current.temp)}°`;
 
-      let actualHour = new Date().getHours();
+      // let actualHour = new Date().getHours();
+      // // icones dynamiques
+      // if (actualHour >= 6 && actualHour < 22) {
+      //   imgIcone.src = `styles/assets/jour/${resultatsAPI.current.weather[0].icon}.svg`;
+      // } else {
+      //   imgIcone.src = `styles/assets/nuit/${resultatsAPI.current.weather[0].icon}.svg`;
+      // }
 
-      // icones dynamiques
-      if (actualHour >= 6 && actualHour < 21) {
-        imgIcone.src = `styles/assets/jour/${resultatsAPI.current.weather[0].icon}.svg`;
-      } else {
-        imgIcone.src = `styles/assets/nuit/${resultatsAPI.current.weather[0].icon}.svg`;
-      }
+      const temperature = resultatsAPI.current.humidity;
+      console.log("temperature", temperature);
     });
 }
 
-//GRAPH
-const labels = ["10h", "11h", "12h", "13h", "14h", "15h"];
+const sensor = "1";
 
-const data = {
-  labels: labels,
-  datasets: [
-    {
-      label: "températures",
-      backgroundColor: "rgb(255,0,0)",
-      borderColor: "rgb(255,0,0)",
-      data: [24.73, 24.61, 24.53, 24.56, 24.6, 24.69, 24.76],
+const url =
+  "http://192.168.90.251/assets/api-station/v1/get-release.php?sensor=${sensor}";
+
+// console.log(url);
+
+let request = new XMLHttpRequest();
+request.open("GET", url);
+request.responseType = "json";
+request.onload = function () {
+  releases = request.response;
+  console.log("hello");
+
+  const xlabels = [];
+  for (var i = 0; i < releases.length; i++) {
+    xlabels.push(releases[i]["time_release"]);
+  }
+
+  const injectTemperature = [];
+  for (var j = 0; j < releases.length; j++) {
+    injectTemperature.push(releases[j]["temperature"]);
+  }
+
+  const injectHumidity = [];
+  for (var k = 0; k < releases.length; k++) {
+    injectHumidity.push(releases[k]["humidity"]);
+  }
+  console.log(injectHumidity);
+
+  const data = {
+    labels: xlabels,
+    datasets: [
+      {
+        label: "temperature °C",
+        borderColor: "rgb(255,0,0)",
+        backgroundColor: "rgba(255,0,0, 0.2)",
+        data: injectTemperature,
+      },
+      {
+        label: "humidité %",
+        borderColor: "rgb(2, 9, 255)",
+        backgroundColor: "rgba(2, 9, 255, 0.2)",
+        data: injectHumidity,
+      },
+    ],
+  };
+
+  const config = {
+    type: "line",
+    data: data,
+    options: {
+      title: {
+        display: true,
+        text: "Relevé de température et d'humidité",
+      },
     },
-    {
-      label: "humidité",
-      backgroundColor: "rgb(2, 9, 255)",
-      borderColor: "rgb(2, 9, 255)",
-      data: [28, 27, 26, 27, 28, 28, 29],
-    },
-  ],
+  };
+
+  const myChart = new Chart(document.getElementById("myChart"), config);
 };
-
-const config = {
-  type: "line",
-  data: data,
-  options: {
-    title: {
-      display: true,
-      text: "Relevé de température et d'humidité",
-    },
-  },
-};
-
-const myChart = new Chart(document.getElementById("myChart"), config);
+request.send();

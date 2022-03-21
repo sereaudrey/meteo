@@ -14,7 +14,7 @@
         <!-- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script> -->
         <!-- <script src="js/map.js"></script> -->
 
-    <title>Météo</title>
+    <title>Météo</title> 
     </head>
     <body onload="init()">
    
@@ -57,7 +57,7 @@
 
         <div class="chart box">
             <h3>Relevé température et humidité</h3>
-            <canvas id="myChart" class="chart-data"></canvas>
+            <canvas id="myChart" class="chart-data" ></canvas>
         </div>
 
         <!-- <form>
@@ -123,7 +123,8 @@
         </div>
         
 
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <!-- chart js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>
