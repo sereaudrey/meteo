@@ -17,8 +17,6 @@
     <title>Météo</title> 
     </head>
     <body onload="init()">
-   
-      
         <div class="popin-connexion" id="popinLogin">
             <form id="formLogin" action="">
                 <div class="content-login">
@@ -44,25 +42,9 @@
                 </div>
             </form>
         </div>
-        <h1> Mon application météo </h1>
-        <div class="weather box">
-                <p><img class="icone icone-temp" src="styles/assets/icones/temperature-low-solid.svg" alt="icone temperature">Température : <span class="temperatureLocal"></span></p>
-                <p><img class="icone icone-humidity" src="styles/assets/icones/droplet-solid.svg" alt="icone temperature"> Humidité : <span class="humidity"></span></p>
-        </div>
+    
+        
 
-        <div class="chart box">
-            <h3>Relevé température et humidité</h3>
-            <canvas id="myChart" class="chart-data" ></canvas>
-        </div>
-
-        <!-- <form>
-            <input placeholder="Rechercher une ville">
-        </form>  -->
-        <div class="meteo_actuelle">
-            <span class="logo"></span>
-            <span class="ville"> Nom de la ville </span> </br>
-            <span class="temperature"> Température actuelle </span>
-        </div>
         <div class="menu">
             <div class="item logo-app">
                 <i class="fas fa-star-half-alt"></i> 
@@ -86,27 +68,26 @@
             <i class="fa-solid fa-circle-user"></i>
             
             <div class="content-meteo-actuelle">
-                <div class="actuel position-actuelle">
-                    <div class="logo-meteo"></div>
-                    <div class="ville">
-                     
-                    </div> </br>
-                </div>
                 <div class="actuel temperature-actuelle">
-                    <div class="logo-meteo"></div>
-                    <div class="temperature"> °C </div> </br>
+                    <p>
+                        <!-- <i class="fas fa-tint"></i> Température :  -->
+                        <img class="icone icone-temp" src="styles/assets/icones/temperature-low-solid.svg" alt="icone temperature">Température : 
+                        <span class="temperatureLocal"></span>
+                    </p>
                 </div>
                 <div class=" actuel humidite-actuelle">
-                    <div class="logo-meteo"></div>
-                    <div class="humidite"> % </div> </br>
+                    <p>
+                        <!-- <i class=" icone fas fa-tint">Humidité : -->
+                        <img class="icone icone-humidity" src="styles/assets/icones/droplet-solid.svg" alt="icone temperature"> Humidité : 
+                        <span class="humidity"></span>
+                    </p>
                 </div>
             </div>
-    
-            <div class="zone-releve">
+            <div class="chart box">
                 <div class="title-releve">
-                    <h2>Historique de mes relevés</h2>
+                    <h2>Graphique</h2>
                 </div>
-                <div class="releve"></div>
+                <canvas id="myChart" class="chart-data" ></canvas>
             </div>
             <div class="zone-map">
                 <div class="title-map">
