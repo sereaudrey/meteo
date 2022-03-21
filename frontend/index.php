@@ -67,24 +67,24 @@
             <h1> Bienvenue sur Atmos ! </h1>
             <i class="fa-solid fa-circle-user"></i>
             
-            <div class="content-meteo-actuelle">
-                <div class="actuel temperature-actuelle">
+            <div class="content-weather">
+                <div class="actual temperature">
                     <p>
-                        <!-- <i class="fas fa-tint"></i> Température :  -->
-                        <img class="icone icone-temp" src="styles/assets/icones/temperature-low-solid.svg" alt="icone temperature">Température : 
+                    <i class="icone fas fa-thermometer-half"></i> Température : 
+                        <!-- <img class="icone icone-temp" src="styles/assets/icones/temperature-low-solid.svg" alt="icone temperature">Température :  -->
                         <span class="temperatureLocal"></span>
                     </p>
                 </div>
-                <div class=" actuel humidite-actuelle">
+                <div class=" actual humidity">
                     <p>
-                        <!-- <i class=" icone fas fa-tint">Humidité : -->
-                        <img class="icone icone-humidity" src="styles/assets/icones/droplet-solid.svg" alt="icone temperature"> Humidité : 
+                        <i class=" icone fas fa-tint"></i>Humidité :
+                        <!-- <img class="icone icone-humidity" src="styles/assets/icones/droplet-solid.svg" alt="icone temperature"> Humidité :  -->
                         <span class="humidity"></span>
                     </p>
                 </div>
             </div>
             <div class="chart box">
-                <div class="title-releve">
+                <div class="title-graph">
                     <h2>Graphique</h2>
                 </div>
                 <canvas id="myChart" class="chart-data" ></canvas>
@@ -94,7 +94,7 @@
                     <h2>Ma sonde</h2> <br> 
                     <p>Villeurbanne</p>
                 </div>
-                <div class="carte_sonde" id="map"></div>
+                <div class="map_sonde" id="map"></div>
             </div>
         </div>
         

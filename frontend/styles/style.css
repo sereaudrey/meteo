@@ -71,15 +71,8 @@ h2 {
   float: right;
 }
 
-.meteo_actuelle {
-  background: #f5f6ff;
-  width: 20%;
-  height: 30%;
-  margin: 5px;
-}
-
 /* map */
-.carte_sonde {
+.map_sonde {
   background: #f5f6ff;
 }
 
@@ -105,30 +98,26 @@ h2 {
   margin-top: 5%;
 }
 
-.zone-releve {
-  background: #39519c;
-  border: 1px solid #39519c;
-  border-radius: 20px;
-  width: 90%;
-  height: 300px;
-}
-
-.title-releve {
+.title-graph {
   float: right;
   padding: 10px;
 }
 
-.actuel {
+.actual {
   background: #39519c;
   border: 1px solid #39519c;
   border-radius: 20px;
   width: 20%;
   margin: 15px;
   height: 50px;
-  color: #b7b7bc;
+  color: #fafafa;
 }
 
-.content-meteo-actuelle {
+.actual p {
+  padding-top: 5px;
+}
+
+.content-weather {
   display: flex;
   margin: 1em;
   align-items: center;
@@ -210,9 +199,6 @@ h2 {
 
   .title-map {
     font-size: 1em;
-  }
-
-  .title-map {
     margin: 1% 5px;
   }
 
@@ -225,21 +211,13 @@ h2 {
 
 .box {
   background: rgba(223, 226, 237, 0.23);
-  border-radius: 15px;
+  border-radius: 20px;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25),
     inset 0px 5px 5px rgba(255, 255, 255, 0.25);
 }
 
-.weather {
-  margin: 1em;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 90%;
-  max-width: 400px;
-}
 @media screen and (max-width: 366px) {
-  .weather {
+  .content-weather {
     flex-direction: column;
     padding-bottom: 20px;
     margin: auto;
@@ -249,24 +227,7 @@ h2 {
     margin-bottom: 1em;
   }
 }
-/* h3 {
-  padding-top: 1em;
-  font-size: 2em;
-  color: #b7b7bc;
-}
 
-h3::first-letter {
-  text-transform: capitalize;
-} */
-
-.weather-left img {
-  width: 150px;
-  height: auto;
-}
-
-.weather-right p {
-  margin-top: 30px;
-}
 .icone {
   width: 20px;
   margin-right: 1.5em;
@@ -282,7 +243,6 @@ h3::first-letter {
 .chart {
   width: 90%;
   height: auto;
-  margin: auto;
   text-align: center;
   background: #39519c;
   border: 1px solid #39519c;
