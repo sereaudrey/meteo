@@ -11,8 +11,8 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
         <script src="js/index.js"></script>
         <!-- Js pour la map -->
-        <!-- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script> -->
-        <!-- <script src="js/map.js"></script> -->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+        <script src="js/map.js"></script>
 
     <title>Météo</title> 
     </head>
@@ -43,6 +43,7 @@
                     </div>
                 </div>
             </form>
+        </div>
         <h1> Mon application météo </h1>
         <div class="weather box">
                 <p><img class="icone icone-temp" src="styles/assets/icones/temperature-low-solid.svg" alt="icone temperature">Température : <span class="temperatureLocal"></span></p>
