@@ -45,14 +45,14 @@
             </form>
         <h1> Mon application météo </h1>
         <div class="weather box">
-            <div class="weather-left">
+            <!-- <div class="weather-left">
                 <h3 class="actual_weather"></h3>
                 <img src="./styles/assets/jour/04d.svg" alt="logo du temps qu'il fait" class='logo-meteo'>
-            </div>
-            <div class="weather-right">
+            </div> -->
+            <!-- <div class="weather-right"> -->
                 <p><img class="icone icone-temp" src="styles/assets/icones/temperature-low-solid.svg" alt="icone temperature">Température : <span class="temperatureLocal"></span></p>
                 <p><img class="icone icone-humidity" src="styles/assets/icones/droplet-solid.svg" alt="icone temperature"> Humidité : <span class="humidity"></span></p>
-            </div>
+            <!-- </div> -->
         </div>
 
         <div class="chart box">
