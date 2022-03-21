@@ -17,13 +17,8 @@
         <title>Météo</title>
     </head>
     <body onload="init()">
-        <?php
-            $dsn = 'mysql:dbname=stationmeteo;host=localhost';
-            $username = 'root';
-            $password = '';
-           
-            $con = new PDO($dsn, $username, $password);
-        ?>
+   
+      
         <div class="popin-connexion" id="popinLogin">
             <form id="formLogin" action="">
                 <div class="content-login">
@@ -75,11 +70,7 @@
                 <div class="actuel position-actuelle">
                     <div class="logo-meteo"></div>
                     <div class="ville">
-                        <?php
-                        $ville = $con->prepare('SELECT city_sensor FROM sensors WHERE id_sensor = :1');
-                        $ville->setFetchMode(PDO::FETCH_ASSOC);
-                        $ville->execute();
-                        ?>
+                     
                     </div> </br>
                 </div>
                 <div class="actuel temperature-actuelle">
@@ -106,8 +97,6 @@
                 <div class="carte_sonde" id="map"></div>
             </div>
         </div>
-        <?php
-            $con = null;
-        ?>
+       
     </body>
 </html>
