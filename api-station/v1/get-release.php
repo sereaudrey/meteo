@@ -112,25 +112,25 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 		$query = "SELECT * FROM RELEASES ";
 		$query .= " WHERE id_sensor = ".$id_sensor;
 	
-	        //Si l'utilisateur souhaite récupèrer les données depuis une date précise
-       		if ($since != "") {
-            		$query .= " AND date_release >= '" . $since . "' ";
-        	}
+		//Si l'utilisateur souhaite récupèrer les données depuis une date précise
+		if ($since != "") {
+				$query .= " AND date_release >= '" . $since . "' ";
+		}
 
-	        //Si l'utilisateur souhaite récupèrer les données jusqu'à une date précise
-	        if ($to != "") {
-	            $query .= " AND date_release <= '" . $to . "' ";
-	        }
-	
-	        //Termine la requête pour trier les données récupérées	
-	        $query .= " ORDER BY date_release DESC ";
+		//Si l'utilisateur souhaite récupèrer les données jusqu'à une date précise
+		if ($to != "") {
+			$query .= " AND date_release <= '" . $to . "' ";
+		}
+
+		//Termine la requête pour trier les données récupérées	
+		$query .= " ORDER BY date_release DESC ";
 
 
-	        //Si l'utilisateur souhaite récupérer un nombre précis d'enregistrement
-        	if($number != 0){
-	            //On modifie la requête
-	            $query .= " LIMIT " . $number . " ";
-	        }
+		//Si l'utilisateur souhaite récupérer un nombre précis d'enregistrement
+		if($number != 0){
+			//On modifie la requête
+			$query .= " LIMIT " . $number . " ";
+		}
 	
 		$reponse = array();
 		//Exécute la requête et récupère le résultat
