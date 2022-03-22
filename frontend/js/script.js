@@ -1,6 +1,6 @@
 // api meteo
 const temperatureLocal = document.querySelector(".temperatureLocal");
-const humidity = document.querySelector(".humidity");
+const humidity = document.querySelector(".humidityApi");
 
 const sensor = "1";
 const url = "http://192.168.90.251/assets/api-station/v1/get-release.php?sensor=" + sensor;
@@ -10,7 +10,6 @@ request.open("GET", url);
 request.responseType = "json";
 request.onload = function () {
   releases = request.response;
-  console.log(releases);
 
   // let actualHour = new Date().getHours();
   //       // // icones dynamiques

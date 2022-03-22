@@ -15,5 +15,5 @@ function init() {
     },
   ).addTo(map);
 
-  var marker = L.marker([45.772, 4.89]).addTo(map);
+  var marker = L.marker([45.783473, 4.882675]).addTo(map);
 }
