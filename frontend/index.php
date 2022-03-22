@@ -70,11 +70,14 @@
                         <p>Température</p>
                         <span class="temperatureLocal"></span>
                     </div>
+
                     <div class="humidity box">
                         <i class="item fas fa-tint"></i>
                         <p>Humidité</p>
-                        <!-- <span class="humidityApi"></span> -->
+                        <span class="humidityApi" ></span>
                     </div>
+
+
                 <div class="chart box">
                     <div class="title-chart">
                         <h2>Graphique</h2>

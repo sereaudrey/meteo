@@ -92,7 +92,8 @@ p {
 
 .temperatureLocal,
 .temperature,
-.humidity {
+.humidity,
+.humidityApi {
   font-size: 2em;
   color: #fafafa;
 }

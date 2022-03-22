@@ -1,6 +1,6 @@
 // api meteo
 const temperatureLocal = document.querySelector(".temperatureLocal");
-const humidity = document.querySelector(".humidity");
+const humidity = document.querySelector(".humidityApi");
 
 const sensor = "1";
 const url =
