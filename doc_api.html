@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>DOCUMENTATION API STATIONMETEO</title>
+
+<xmp theme="united" style="display:none;">
+# FICHIER API STATIONMETEO:
+
+## FICHIER add-record.php:
+
+<p> Le fichier add-record :</p>
+<p>-	Il permet de prendre la temperature et l’humidite et l’id de la sonde pour ensuite dans la base de donnees.
+Les parametres s’envoie en GET comme ceci :</p> <br>
+<p> les 3 paramètres a prendre en compte 3 paramètres:</p>
+
+   <p>-sensor={id_sonde} </p> <br>
+
+   <p> -humidity={humidity}</p> <br>
+
+   <p>-temperature={temperature}</p> <br>
+
+/api-station/v1/add-record.php/sensor={id_sonde}&humidity={humidity}&temperature={temperature}
+
+<p>voici le résultat si le relevé a été ajouté avec un retour json:</p><br>
+
+<p>
+{<br>
+    "message": "Releve ajoute avec succes"<br>
+}<br>
+</p><br>
+
+<p>voici le résultat si le relevé n'a été ajouté avec succès via un retour json:</p><br>
+
+<p>{ <br>
+    "message": "URI incompletes"<br>
+}<br></p><br>
+
+<p>Et si la méthode n'est pas la bonne cela vous mettra un retour json:</p><br>
+
+<p>{<br>
+    "message": "la méthode n'est pas autorisée"<br>
+}<br></p>
+
+
+
+## FICHIER add-sensor.php:
+
+<p> Le fichier add-sensor :</p><br>
+
+<p> Ce fichier permet d'ajouter une sonde dans la base de données.
+    Les informations relatives à la sonde à créer sont envoyées via un formaulaire POST
+	Pour appeler ce fichier via un site web, on utilise les syntaxes suivantes : </p><br>
+
+   <p> l'URI de ce fichier est:</p><br>
+<p> /api-station/v1/add-sensor.php</p><br>
+
+<p>Les paramètres a passés en post sont sous formulaire:</p>
+<p>Exemple:</p><br>
+<p>name: pour le nom de la sonde c'est un nombre.</p><br>
+<p>place: pour l'endroit ou la sonde se trouve au moment ou elle prend le relevé. </p><br>
+<p>city: pour la ville ou est la sonde. </p><br>
+<p>country: le pays de la sonde.</p><br>
+<p>owner: le nom de la personne qui possède la sonde.</p><br>
+
+<p>voici le résultat si la sonde a été ajouté avec un retour json:</p><br>
+
+<p>
+{<br>
+    "message": "La requête a été effectué"<br>
+}<br>
+</p><br>
+
+<p>voici le résultat si le relevé n'a été ajouté avec succès via un retour json:</p><br>
+
+<p>{ <br>
+    "message": "La requête n'est pas effectuée"<br>
+}<br></p>
+<br>
+
+
+<p>Et si la méthode n'est pas la bonne cela vous mettra un retour json:</p><br>
+
+<p>{<br>
+    "message": "la méthode n'est pas autorisée"<br>
+}<br></p>
+
+## FICHIER get-record.php:
+
+<p>Ce fichier permet de récupérer des données liés aux relevés des sondes
+    Lors de l'appel à ce fichier, l'utiliateur est obligé de préciser l'id de la sonde pour
+laquelle il souhaite récupérer des données. on utilise la méthode GET
+	Pour appeler ce fichier via un site web, on utilise les syntaxes suivantes :</p><br>
+
+<p> Si l'utilisateur souhaite récupérer tous les relevés d'une sonde :<br>
+    <p>Les données récupérées sont renvoyées au format JSON.</p><br>
+    <p>/api-station/v1/get-record.php?sensor={id_sonde}
+        <p>Exemple:</p><br>
+<p>[</p>
+ <p> {  </p><br>
+        "0": "1",<br>
+        "id_sensor": "1",<br>
+        "1": "2022-03-21",<br>
+        "date_release": "2022-03-21",<br>
+        "2": "17:48:34",<br>
+        "time_release": "17:48:34",<br>
+        "3": "26.23",<br>
+        "humidity": "26.23",<br>
+        "4": "27.10",<br>
+        "temperature": "27.10"<br>
+ <p> } </p>
+<p>]</p><br>
+        
+
+<p>Si l'utilisateur souhaite récupérer un nombre précis de relevés de la sonde (à partir du plus récent) :</p><br>
+
+<p> /api-station/v1/get-record.php?sensor={id_sonde}&number={nombre_de_releves_a_recuperer}</p><br>
+
+<p>Exemple:</p><br>
+
+<p>[</p>
+<p> {  </p><br>
+        "0": "1",<br>
+        "id_sensor": "1",<br>
+        "1": "2022-03-21",<br>
+        "date_release": "2022-03-21",<br>
+        "2": "17:48:34",<br>
+        "time_release": "17:48:34",<br>
+        "3": "26.23",<br>
+        "humidity": "26.23",<br>
+        "4": "27.10",<br>
+        "temperature": "27.10"<br>
+<p> }, </p>
+<p> {  </p><br>
+        "0": "1",<br>
+        "id_sensor": "1",<br>
+        "1": "2022-03-21",<br>
+        "date_release": "2022-03-21",<br>
+        "2": "17:47:32",<br>
+        "time_release": "17:47:32",<br>
+        "3": "26.38",<br>
+        "humidity": "26.38",<br>
+        "4": "27.09",<br>
+        "temperature": "27.09"<br>
+<p> } </p>
+<p>]</p><br>
+
+
+<p>si l'utilisateur souhaite récupérer les relevés d'une sonde à partir d'une date précise :</p><br>
+
+<p>/api-station/v1/get-record.php?sensor={id_sonde}&since={yyyy-mm-dd}</p><br>
+<p>Exemple:</p><br>
+
+<p>[</p>
+<p> {  </p><br>
+        "0": "1",<br>
+        "id_sensor": "1",<br>
+        "1": "2022-03-22",<br>
+        "date_release": "2022-03-22",<br>
+        "2": "11:19:19",<br>
+        "time_release": "11:19:19",<br>
+        "3": "26.98",<br>
+        "humidity": "26.98",<br>
+        "4": "27.27",<br>
+        "temperature": "27.27"<br>
+<p> } </p>
+<p>]</p><br>
+
+
+<p>Si l'utilisateur souhaite récupérer les relevés d'une sonde jusqu'à une date précise :</p><br>
+
+<p>/api-station/v1/get-record.php?sensor={id_sonde}&to={yyyy-mm-dd}</p><br>
+<p>Exemple:</p><br>
+
+<p>[</p>
+<p> {  </p><br>
+        "0": "1",<br>
+        "id_sensor": "1",<br>
+        "1": "2022-03-22",<br>
+        "date_release": "2022-03-22",<br>
+        "2": "11:27:01",<br>
+        "time_release": "11:27:01",<br>
+        "3": "26.22",<br>
+        "humidity": "26.22",<br>
+        "4": "27.08",<br>
+        "temperature": "27.08"<br>
+        <p> }, </p>
+        <p> } </p>
+        "0": "1",<br>
+        "id_sensor": "1",<br>
+        "1": "2022-03-22",<br>
+        "date_release": "2022-03-22",<br>
+        "2": "11:26:00",<br>
+        "time_release": "11:26:00",<br>
+        "3": "25.39",<br>
+        "humidity": "25.39",<br>
+        "4": "27.10",<br>
+        "temperature": "27.10"<br>
+        <p> } </p>
+    <p>]</p><br>
+<p>Ces URI sont compatibles entre elles et peuvent être appelés ensemble.</p><br>
+
+<p>Ex : /api-station/v1/get-record.php?sensor={id_sonde}&since={yyyy-mm-dd}&to={yyyy-mm-dd}</p><br>
+<p>Exemple:</p><br>
+
+<p>[</p>
+<p> {  </p><br>
+        "0": "1",<br>
+        "id_sensor": "1",<br>
+        "1": "2022-03-22",<br>
+        "date_release": "2022-03-22",<br>
+        "2": "11:33:07",<br>
+        "time_release": "11:33:07",<br>
+        "3": "25.66",<br>
+        "humidity": "25.66",<br>
+        "4": "27.03",<br>
+        "temperature": "27.03"<br>
+        <p> }, </p>
+    <p> {  </p><br>
+    "0": "1",<br>
+    "id_sensor": "1",<br>
+    "1": "2022-03-21",<br>
+    "date_release": "2022-03-21",<br>
+    "2": "09:11:45",<br>
+    "time_release": "09:11:45",<br>
+    "3": "37.02",<br>
+    "humidity": "37.02",<br>
+    "4": "25.08",<br>
+    "temperature": "25.08"<br>
+    <p> } </p>
+    <p>]</p><br>
+
+<p>Et si la méthode n'est pas la bonne cela vous mettra un retour json:</p><br>
+
+<p>{<br>
+    "message": "la méthode n'est pas autorisée"<br>
+}<br></p>
+
+##FICHIER get-sensors.php:
+<p> Ce fichier permet de récupérer toutes les informations des sondes enregistrées
+	Pour appeler ce fichier via un site web, on utilise les syntaxes suivantes :</p><br>
+    
+<p>Si l'utilisateur souhaite récupérer toutes les sondes :</p><br>
+
+<p>/api-station/v1/get-sensors.php</p><br>
+<p>Exemple:</p><br>
+<p>[</p>
+<p> {  </p><br>
+        "0": "1",<br>
+        "id_sensor": "1",<br>
+        "1": "capteur de test",<br>
+        "name_sensor": "capteur de test",<br>
+        "2": "Interieur",<br>
+        "place_sensor": "Interieur",<br>
+        "3": "Lyon",<br>
+        "city_sensor": "Lyon",<br>
+        "4": "France",<br>
+        "country_sensor": "France",<br>
+        "5": null,<br>
+        "first_day_sensor": null,<br>
+        "6": null,<br>
+        "number_releases": null,<br>
+        "7": null,<br>
+        "owner_sensor": null<br>
+        <p>} </p>
+        <p>{<br>
+        "0": "16",<br>
+        "id_sensor": "16",<br>
+        "1": "Sonde salon",<br>
+        "name_sensor": "Sonde salon",<br>
+        "2": "salon",<br>
+        "place_sensor": "salon",<br>
+        "3": "Geneve",<br>
+        "city_sensor": "Geneve",<br>
+        "4": "Suisse",<br>
+        "country_sensor": "Suisse",<br>
+        "5": "2022-03-21",<br>
+        "first_day_sensor": "2022-03-21",<br>
+        "6": "0",<br>
+        "number_releases": "0",<br>
+        "7": "Yannick",<br>
+        "owner_sensor": "Yannick"<br>
+        <p> } </p>
+    <p>]</p><br>
+
+<p>Si l'utilisateur souhaite récupérer les informations d'une sonde particulière :</p><br>
+
+<p></p>/api-station/v1/get-sensors.php?sensor={id_sensor}</p><br>
+<p>Exemple:</p><br>
+ 
+<p>[</p>
+<p> {  </p><br>
+        "0": "1",<br>
+        "id_sensor": "1",<br>
+        "1": "capteur de test",<br>
+        "name_sensor": "capteur de test",<br>
+        "2": "Interieur",<br>
+        "place_sensor": "Interieur",<br>
+        "3": "Lyon",<br>
+        "city_sensor": "Lyon",<br>
+        "4": "France",<br>
+        "country_sensor": "France",<br>
+        "5": null,<br>
+        "first_day_sensor": null,<br>
+        "6": null,<br>
+        "number_releases": null,<br>
+        "7": null,<br>
+        "owner_sensor": null<br>
+        <p> } </p>
+        <p>]</p><br>
+
+##FICHIER update-sensor.php:
+
+<p>Ce fichier permet de modifier les données d'une sonde dans la base de données.
+    Les informations relatives à la sonde à modifier sont envoyées via un formaulaire POST
+	Pour appeler ce fichier via un site web, on utilise les syntaxes suivantes :</p><br>
+
+<p>/api-station/v1/update_sensor.php</p><br>
+
+<p>Exemple:</p><br>
+
+<p>les 5 paramètres a prendre en compte dans les formulaire:</p><br>
+
+<p>name: pour le nom de la sonde c'est un nombre.</p><br>
+<p>place: pour l'endroit ou la sonde se trouve au moment ou elle prend le relevé. </p><br>
+<p>city: pour la ville ou est la sonde. </p><br>
+<p>country: le pays de la sonde.</p><br>
+<p>owner: le nom de la personne qui possède la sonde.</p><br>
+
+</xmp>
+
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+</html>
