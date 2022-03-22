@@ -3,14 +3,13 @@ const temperatureLocal = document.querySelector(".temperatureLocal");
 const humidity = document.querySelector(".humidity");
 
 const sensor = "1";
-const url = "http://192.168.90.251/assets/api-station/v2/lire.php";
+const url = "http://192.168.90.251/assets/api-station/v1/get-release.php?sensor=" + sensor;
 
 let request = new XMLHttpRequest();
 request.open("GET", url);
 request.responseType = "json";
 request.onload = function () {
-  releasesAll = request.response;
-  releases = releasesAll.releves;
+  releases = request.response;
   console.log(releases);
 
   // let actualHour = new Date().getHours();
@@ -23,25 +22,25 @@ request.onload = function () {
 
   //last data humidity and temperature
   temperatureLocal.innerText = `${Math.trunc(
-    releases[releases.length - 1]["temperature"],
+    releases[0]["temperature"],
   )}°`;
   humidity.innerText = `${Math.trunc(
-    releases[releases.length - 1]["humidity"],
+    releases[0]["humidity"],
   )}%`;
 
   // Chart Data
   const xlabels = [];
-  for (var i = 0; i < releases.length; i++) {
+  for (var i = releases.length - 1; i >= 0; i--, -1) {
     xlabels.push(releases[i]["time_release"]);
   }
 
   const injectTemperature = [];
-  for (var j = 0; j < releases.length; j++) {
+  for (var j = releases.length - 1; j >= 0; j--, -1) {
     injectTemperature.push(releases[j]["temperature"]);
   }
 
   const injectHumidity = [];
-  for (var k = 0; k < releases.length; k++) {
+  for (var k = releases.length - 1; k >= 0; k--, -1) {
     injectHumidity.push(releases[k]["humidity"]);
   }
 
