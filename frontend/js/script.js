@@ -3,15 +3,15 @@ const temperatureLocal = document.querySelector(".temperatureLocal");
 const humidity = document.querySelector(".humidity");
 
 const sensor = "1";
-const url = "http://192.168.90.251/assets/api-station/v2/lire.php";
-
+const url =
+  "http://192.168.90.251/assets/api-station/v1/get-release.php?sensor=" +
+  sensor;
+console.log(url);
 let request = new XMLHttpRequest();
 request.open("GET", url);
 request.responseType = "json";
 request.onload = function () {
-  releasesAll = request.response;
-  releases = releasesAll.releves;
-  console.log(releases);
+  releases = request.response;
 
   // let actualHour = new Date().getHours();
   //       // // icones dynamiques

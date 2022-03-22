@@ -68,12 +68,12 @@
                     <div class="temperature box">
                         <i class="item fas fa-thermometer-half"></i>
                         <p>Température</p>
-                        <span class="temperatureLocal">34</span>
+                        <span class="temperatureLocal"></span>
                     </div>
                     <div class="humidity box">
                         <i class="item fas fa-tint"></i>
                         <p>Humidité</p>
-                        <span class="humidity">34</span>
+                        <!-- <span class="humidityApi"></span> -->
                     </div>
                 <div class="chart box">
                     <div class="title-chart">
@@ -91,6 +91,6 @@
         </div>
         <!-- chart js -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
-        <!-- <script src="js/script.js"></script> -->
+        <script src="js/script.js"></script>
     </body>
 </html>
